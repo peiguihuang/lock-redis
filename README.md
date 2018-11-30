@@ -13,7 +13,6 @@
 
 @RequestMapping(value = "/lock", method = RequestMethod.GET)
     public Object lock(String id) {
-    
         ResultMap rMap = new ResultMap();
         RedisLock lock = new RedisLock(redis, "infun-lock:"+id, 11000, 200000);
         try {
@@ -46,7 +45,7 @@
 * lockKey  锁的key
 * timeoutMsecs  在这个时间内重试
 * expireMsecs   超过这个时间锁自动释放
-*/
+**/
 
 public RedisLock(RedisTemplate redisTemplate, String lockKey, int timeoutMsecs, int expireMsecs) {
 
