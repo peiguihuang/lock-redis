@@ -10,7 +10,7 @@
 
 # 调用方式
 
-
+```
 @RequestMapping(value = "/lock", method = RequestMethod.GET)
     public Object lock(String id) {
         ResultMap rMap = new ResultMap();
@@ -37,9 +37,12 @@
         return rMap;
         
     }
-    
+```
     
 # 重要参数说明
+
+```
+
 /**
 * Detailed constructor.
 * lockKey  锁的key
@@ -53,4 +56,5 @@ public RedisLock(RedisTemplate redisTemplate, String lockKey, int timeoutMsecs, 
     
 }
 
+```
     
