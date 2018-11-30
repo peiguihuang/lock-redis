@@ -9,6 +9,8 @@
 
 
 # 调用方式
+
+
 @RequestMapping(value = "/lock", method = RequestMethod.GET)
     public Object lock(String id) {
     
@@ -45,6 +47,7 @@
 * timeoutMsecs  在这个时间内重试
 * expireMsecs   超过这个时间锁自动释放
 */
+
 public RedisLock(RedisTemplate redisTemplate, String lockKey, int timeoutMsecs, int expireMsecs) {
 
     this(redisTemplate, lockKey, timeoutMsecs);
